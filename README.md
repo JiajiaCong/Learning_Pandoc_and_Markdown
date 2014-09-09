@@ -47,7 +47,7 @@ tab to complete directories and file names.
 # pandoc中寻求帮助
 
 - 可以输入pandoc--help
-- 另外，可以访问pandoc的使用文档，（http://johnmacfarlane.net/pandoc/README.html）
+- 另外，可以访问pandoc的使用文档，（http://johnmacfarlane.net/pandoc/README.html ）
 - 需要注意的是，pandoc中其实有很多地方可以控制的，比如在文档格式转化中，可以控制的地方还是挺多的。等需要的时候，好好钻研一下使用文档。
 
 
