@@ -59,7 +59,7 @@ tab to complete directories and file names.
 
 通过四个空白或者一个tab键进行开头的文字块，就会产生和latex verbatim类似的效果。
 
-## 以\```开头和结尾的代码块  
+## 以\`开头和结尾的代码块  
 通过至少三个 \` 开头和至少同一长度的 ` 结束，在这之间的代码就成为了代码块。
 
 
@@ -68,7 +68,8 @@ tab to complete directories and file names.
 |这是一个行区块的例子  
 |  这也是一个行区块的例子  
 |这仍是一个行区块的例子  
- 这个也是可以的哦！  
+ 这个也是可以的哦！ 
+|上面的例子很特殊 
 
 
 
