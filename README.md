@@ -68,7 +68,7 @@ tab to complete directories and file names.
 |这是一个行区块的例子  
 |  这也是一个行区块的例子  
 |这仍是一个行区块的例子  
- 这个也是可以的哦！ 
+ 这个也是可以的哦！    
 |上面的例子很特殊 
 
 
