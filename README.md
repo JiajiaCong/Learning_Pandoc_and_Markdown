@@ -44,15 +44,19 @@ tab to complete directories and file names.
 - markdown转为pdf, pandoc test.md -f markdown -t pdf -s -o test.pdf，或者更简化的 pandoc test.md -s -o test.pdf，打开pdf,输入.\test.pdf
 
 
+# 区块引言
+
+区块可以是一行或者几行plain words，或者是一行或几行其他元素（如清单或者标题），可以通过行首由一个\> 符号加上一个空白作为开头来产生区块。一个偷懒的方式是，只要在引言区块的第一行行首输入\> 即可，后面几行的\>符号可以省略，但是不要断行。
+
+
+# pandoc中进行文献和网页的应用
+
+
 # pandoc中寻求帮助
 
 - 可以输入pandoc--help
 - 另外，可以访问pandoc的使用文档，（http://johnmacfarlane.net/pandoc/README.html ）
 - 需要注意的是，pandoc中其实有很多地方可以控制的，比如在文档格式转化中，可以控制的地方还是挺多的。等需要的时候，好好钻研一下使用文档。
-
-
-# pandoc中进行文献和网页的应用
-
 
 #pandoc的一些小技巧
 
