@@ -77,7 +77,9 @@ tab to complete directories and file names.
 # 删除线
 以\~~和\~~包着的文字，会产生删除线，即文字上会产生删除的划线。
 
-
+# 上标和下标
+h~2~o
+2^3^=8
 
 # pandoc中进行文献和网页的应用
 
