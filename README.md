@@ -92,7 +92,7 @@ tab to complete directories and file names.
 这是一个脚注^[脚注内容]
 
 # pandoc中进行文献和网页的应用
-
+ pandoc -s -S --bibliography=test.bib --csl apa.csl  test.md -o test.pdf
 
 # pandoc中寻求帮助
 
