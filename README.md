@@ -72,7 +72,9 @@ tab to complete directories and file names.
 |上面的例子很特殊 
 
 
+# 行内强调
 
+以\*或者\_前后包住某一个或者某一段文字就算是强调，更强烈的强调可以采用**或者__包着算是强调。
 
 # pandoc中进行文献和网页的应用
 
