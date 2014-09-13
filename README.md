@@ -1,4 +1,4 @@
-Pandoc
+﻿Pandoc
 ======
 
 Pandoc for beginners
@@ -51,6 +51,6 @@ tab to complete directories and file names.
 - 需要注意的是，pandoc中其实有很多地方可以控制的，比如在文档格式转化中，可以控制的地方还是挺多的。等需要的时候，好好钻研一下使用文档。
 
 
- 
+# pandoc中进行文献和网页的应用
 
 
