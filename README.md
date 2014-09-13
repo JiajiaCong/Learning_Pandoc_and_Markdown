@@ -35,8 +35,8 @@ mkdir foo to create a subdirectory called foo in the working directory.
 up-arrow to go back through your command history.
 tab to complete directories and file names.
 
-## 转换文档格式
 
+## 转换文档格式
 - 首先进入到你想要转换的文档所在的目录下，输入ls命令，就可以看到该目录下的所有文件，比如我们想要将test.md转化为其他格式。
 - markdown转为html，pandoc test.md -f markdown -t html -s -o test.html,这个命令将test.md转换为了test.html格式。想打开转换的html文件，输入.\test.html
 - markdown转为text, pandoc test.md -f markdown -t latex -s -o test.tex,或者更简化的pandoc test.md -s -o test.tex,打开tex文档，输入.\test.tex。在markdown中无法控制字体和边距等，可以在转换后的tex文档中，添加一些命令来让文档变得更好一些。
@@ -47,7 +47,6 @@ tab to complete directories and file names.
 # 区块引言
 
 ## 最简单的区块引言
-
 区块可以是一行或者几行plain words，或者是一行或几行其他元素（如清单或者标题），可以通过行首由一个\> 符号加上一个空白作为开头来产生区块。一个偷懒的方式是，只要在引言区块的第一行行首输入\> 即可，后面几行的\>符号可以省略，但是不要通过空行进行断行，可以通过在行末添加空格来进行断行。
 
 区块内可以通过＞＞来进行区块的嵌套。
@@ -56,15 +55,15 @@ tab to complete directories and file names.
 
 
 ## 保持原汁原味的区块引言，和latex中的verbatim环境类似
-
 通过四个空白或者一个tab键进行开头的文字块，就会产生和latex verbatim类似的效果。
 
-## 以\`开头和结尾的代码块  
+
+## 以\`开头和\`结尾的代码块 
+
 通过至少三个 \` 开头和至少同一长度的 ` 结束，在这之间的代码就成为了代码块。
 
 
 # 行区块
-
 |这是一个行区块的例子  
 |  这也是一个行区块的例子  
 |这仍是一个行区块的例子  
@@ -73,8 +72,12 @@ tab to complete directories and file names.
 
 
 # 行内强调
+以\*或者\_前后包住某一个或者某一段文字就会产生斜体，更强烈的强调可以采用**或者__包着算是强调。但是文字和符号之间不能有空格。
 
-以\*或者\_前后包住某一个或者某一段文字就算是强调，更强烈的强调可以采用**或者__包着算是强调。
+# 删除线
+以~~和~~包着的文字，会产生删除线，即文字上会产生删除的划线。
+
+
 
 # pandoc中进行文献和网页的应用
 
