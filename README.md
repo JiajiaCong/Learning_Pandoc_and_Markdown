@@ -91,8 +91,23 @@ tab to complete directories and file names.
 
 这是一个脚注^[脚注内容]
 
-# pandoc中进行文献和网页的应用
- pandoc -s -S --bibliography=test.bib --csl apa.csl  test.md -o test.pdf
+# pandoc中进行文献的应用
+想要进行文献的引用，首先应该在test.md的同一目录下具备两个东西，一是bib，一是csl文件（相当于latex中的ast文件，规定了文献的标注格式）。bib文件可以通过很多文献管理文件声称，csl文件可以通过以下两个网站找到很多不同格式的csl文件，[网站1]（https://zotero.org/styles ），[网站2]（https://github.com/citation-style-language/styles）
+
+可以通过下面的命令来把markdown文件转化为pdf文件。
+
+    pandoc -s -S --bibliography=test.bib --csl apa.csl  test.md -o test.pdf
+    
+好像-S是可以省略的，下面的命令也是可以成功的。
+   
+    pandoc -s --bibliography=test.bib --csl apa.csl test.md -o test.pdf
+
+好像-s -S可以省略，下面的这个命令也是可以成功的。
+
+    pandoc --bibliography=test.bib --csl apa.csl  test.md -o test.pdf
+    
+在文本中进行文献引用，有三种方式。
+
 
 # pandoc中寻求帮助
 
