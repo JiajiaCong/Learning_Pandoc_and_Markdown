@@ -1,22 +1,22 @@
-﻿Pandoc
+﻿Pandoc & Markdown
 ======
 
-Pandoc for beginners like me
+for beginners like me
 
-# 安装pandoc
+# 1. 安装pandoc
 
 安装pandoc的过程非常简单，google pandoc, 下载windows对应的安装文件。安装之后，可以在cmd中输入pandoc，若是出现了pandoc的exe，那么就是安装成功了。
 
-# 使用pandoc
+# 2. 使用pandoc
 
 我使用sublime text写好了一个名为test.md的markdown, 下面想试试将其转化为其他的格式，尤其是pdf, doc, tex，html等。具体的说明在[pandoc的简要使用说明]（http://johnmacfarlane.net/pandoc/getting-started.html ）（需要特别注意的在markdown中写入url时，url结束后需要空一格，然后再写那半边括号），
 这个官方文档中，但是是英语的，我翻译一下。
 
-## 打开pandoc在windows中的终端
+## 2.1 打开pandoc在windows中的终端
 
 pandoc在windows中的终端称为PowerShell,我喜欢在cmd中输入powershell直接来找到。打开powershell。为了确定已经安装好了pandoc，可以再powershell中输入pandoc--version, 回车，会出现pandoc的一些相关信息。
 
-## 获得和改变pandoc的工作目录
+## 2.2 获得和改变pandoc的工作目录
 
 想要pandoc工作，必须让pandoc找到你文档所在的地方。这就涉及到如何修改pandoc的工作目录。有以下的一些命令，这些命令都是在powershell中操作的：
 
@@ -36,7 +36,7 @@ up-arrow to go back through your command history.
 tab to complete directories and file names.
 
 
-## 转换文档格式
+## 2.3 转换文档格式
 - 首先进入到你想要转换的文档所在的目录下，输入ls命令，就可以看到该目录下的所有文件，比如我们想要将test.md转化为其他格式。
 - markdown转为html，pandoc test.md -f markdown -t html -s -o test.html,这个命令将test.md转换为了test.html格式。想打开转换的html文件，输入.\test.html
 - markdown转为text, pandoc test.md -f markdown -t latex -s -o test.tex,或者更简化的pandoc test.md -s -o test.tex,打开tex文档，输入.\test.tex。在markdown中无法控制字体和边距等，可以在转换后的tex文档中，添加一些命令来让文档变得更好一些。
@@ -44,9 +44,9 @@ tab to complete directories and file names.
 - markdown转为pdf, pandoc test.md -f markdown -t pdf -s -o test.pdf，或者更简化的 pandoc test.md -s -o test.pdf，打开pdf,输入.\test.pdf
 
 
-# 区块引言
+# 3. 区块引言
 
-## 最简单的区块引言
+## 3.1 最简单的区块引言
 区块可以是一行或者几行plain words，或者是一行或几行其他元素（如清单或者标题），可以通过行首由一个\> 符号加上一个空白作为开头来产生区块。一个偷懒的方式是，只要在引言区块的第一行行首输入\> 即可，后面几行的\>符号可以省略，但是不要通过空行进行断行，可以通过在行末添加空格来进行断行。
 
 区块内可以通过＞＞来进行区块的嵌套。
@@ -54,16 +54,16 @@ tab to complete directories and file names.
 需要的注意的是，在区块引言之前需要预留至少一个空白行。
 
 
-## 保持原汁原味的区块引言，和latex中的verbatim环境类似
+## 3.2 保持原汁原味的区块引言，和latex中的verbatim环境类似
 通过四个空白或者一个tab键进行开头的文字块，就会产生和latex verbatim类似的效果。
 
 
-## 以\`开头和\`结尾的代码块 
+## 3.3 以\`开头和\`结尾的代码块 
 
 通过至少三个 \` 开头和至少同一长度的 ` 结束，在这之间的代码就成为了代码块。
 
 
-# 行区块
+# 4. 行区块
 |这是一个行区块的例子  
 |  这也是一个行区块的例子  
 |这仍是一个行区块的例子  
@@ -71,27 +71,72 @@ tab to complete directories and file names.
 |上面的例子很特殊 
 
 
-# 行内强调
+# 5. 行内强调
 以\*或者\_前后包住某一个或者某一段文字就会产生斜体，更强烈的强调可以采用**或者__包着算是强调。但是文字和符号之间不能有空格。
 
-# 删除线
+# 6. 删除线
 以\~~和\~~包着的文字，会产生删除线，即文字上会产生删除的划线。
 
-# 上标和下标
+# 7. 上标和下标
 下标用\~和\~夹着，h~2~o
 
 上标用\^和\^夹着，2^3^=8
 
 
-# 添加图片
+# 8. 添加图片
 ![图片标题]（图片所在的硬盘地址或者网络地址）
 
-# 添加脚注
+# 9. 添加脚注
 脚注的格式如下：
 
 这是一个脚注^[脚注内容]
 
-# pandoc中进行文献的应用
+# 10. 文内注释
+这个例子来自下面的这个网址（http://celavie.me/lib/2013/10/19/Markdown%E5%86%99%E4%BD%9C%EF%BC%88%E4%BA%8C%EF%BC%89.html ）
+
+    子曰[1]：“学[2]而时习[3]之，不亦说[4]乎？有朋[5]自远方来，不亦乐[6]乎？人不知[7]，而不愠[8]，不亦君子[9]乎？”
+    [1] 子：中国古代对于有地位、有学问的男子的尊称，有时也泛称男子。《论语》书中“子曰”的子，都是指孔子而言。
+
+    [2] 学：孔子在这里所讲的“学”，主要是指学习西周的礼、乐、诗、书等传统文化典籍。
+    
+    [3] 时习：在周秦时代，“时”字用作副词，意为“在一定的时候”或者“在适当的时候”。但朱熹在《论语集注》一书中把“时”解释为“时常”。“习”，指演习礼、乐；复习诗、书。也含有温习、实习、练习的意思。
+    
+    [4] 说：音ｙｕè，同悦，愉快、高兴的意思。
+    
+    [5] 有朋：一本作“友朋”。旧注说，“同门曰朋”，即同在一位老师门下学习的叫朋，也就是志同道合的人。
+    
+    [6] 乐：与说有所区别。旧注说，悦在内心，乐则见于外。
+    
+    [7] 人不知：此句不完整，没有说出人不知道什么。缺少宾语。一般而言，知，是了解的意思。人不知，是说别人不了解自己。
+    
+    [8] 愠：音ｙùｎ，恼怒，怨恨。
+    
+    [9] 君子：《论语》书中的君子，有时指有德者，有时指有位者。此处指孔子理想中具有高尚人格的人。
+    
+    为实现以上效果，在Markdown语法中应该这样写： 
+    
+      子曰<sup>[[1]](#[1])</sup>：“学<sup>[[2]](#[2])</sup>而时习<sup>[[3]](#[3])</sup>之，不亦说<sup>[[4]](#[4])</sup>乎？有朋<sup>[[5]](#[5])</sup>自远方来，不亦乐<sup>[[6]](#[6])</sup>乎？人不知<sup>[[7]](#[7])</sup>，而不愠<sup>[[8]](#[8])</sup>，不亦君子<sup>[[9]](#[9])</sup>乎？”
+      
+     <span id="[1]">[1]</span> 子：中国古代对于有地位、有学问的男子的尊称，有时也泛称男子。《论语》书中“子曰”的子，都是指孔子而言。
+     
+     <span id="[2]">[2]</span> 学：孔子在这里所讲的“学”，主要是指学习西周的礼、乐、诗、书等传统文化典籍。
+     
+     <span id="[3]">[3]</span> 时习：在周秦时代，“时”字用作副词，意为“在一定的时候”或者“在适当的时候”。但朱熹在《论语集注》一书中把“时”解释为“时常”。“习”，指演习礼、乐；复习诗、书。也含有温习、实习、练习的意思。
+     
+     <span id="[4]">[4]</span> 说：音ｙｕè，同悦，愉快、高兴的意思。
+     
+     <span id="[5]">[5]</span> 有朋：一本作“友朋”。旧注说，“同门曰朋”，即同在一位老师门下学习的叫朋，也就是志同道合的人。
+     
+     <span id="[6]">[6]</span> 乐：与说有所区别。旧注说，悦在内心，乐则见于外。 
+     
+     <span id="[7]">[7]</span> 人不知：此句不完整，没有说出人不知道什么。缺少宾语。一般而言，知，是了解的意思。人不知，是说别人不了解自己。
+     
+     <span id="[8]">[8]</span> 愠：音ｙùｎ，恼怒，怨恨。
+     
+     <span id="[9]">[9]</span> 君子：《论语》书中的君子，有时指有德者，有时指有位者。此处指孔子理想中具有高尚人格的人。
+
+
+# 11. Pandoc Markdown 中进行文献的应用
 想要进行文献的引用，首先应该在test.md的同一目录下具备两个东西，一是bib，一是csl文件（相当于latex中的ast文件，规定了文献的标注格式）。bib文件可以通过很多文献管理文件声称，csl文件可以通过以下两个网站找到很多不同格式的csl文件，[网站1]（https://zotero.org/styles ），[网站2]（https://github.com/citation-style-language/styles）
 
 可以通过下面的命令来把markdown文件转化为pdf文件。
@@ -106,16 +151,27 @@ tab to complete directories and file names.
 
     pandoc --bibliography=test.bib --csl apa.csl  test.md -o test.pdf
     
+千万要记住，在markdown文本的最末尾要像latex一样说明一下我们使用的是哪个bib文件。比如使用的是test.bib, 所以要加上命令
+   \bibliography{test.bib}
+
 在文本中进行文献引用，有三种方式。
 
+- 写法1：[@yangzhiping2001]，@符号后面直接写bib文件的引用文献的唯一编号，如yangzhiping2001.这样生成的格式是（yangzhiping,2001）
+- 写法2：@yangzhiping2001，这种格式没有中括号，生成的格式是yangzhiping(2001)
+- 写法3：如果有多個引用需要放在一起的話，需要用分號鏈接，[@Smith1990xh; @Smith1990ts]。如果是同一個作者的話，放心，pandoc會自動將他們声称成 (Smith, 1990a; 1990b) 
 
-# pandoc中寻求帮助
+
+需要注意的是（目前这个问题我还没有弄得很清楚），pandoc markdown好像要求bib是UTF-8编码。并且，对于bib中出现的一些乱码，比如一些德国人名字，法国人名字中的特殊字符，如果在bib中没有很好的人工正确处理，在bib中是乱码，那么通过pandoc将markdown改编为pdf就会报错，往往不能成功。可以说在这一点上，pandoc markdown的兼容性比起latex还是差了不少，在我的印象中，latex的bib中即使有一些乱码，latex也能成功编译，只不过reference中显示的仍旧是乱码。
+
+
+# 12. pandoc中寻求帮助
 
 - 可以输入pandoc--help
 - 另外，可以访问pandoc的使用文档，（http://johnmacfarlane.net/pandoc/README.html ）
+- pandoc markdown的使用说明，有中文版，可以google一下，网址是 (http://pages.tzengyuxio.me/pandoc/ )
 - 需要注意的是，pandoc中其实有很多地方可以控制的，比如在文档格式转化中，可以控制的地方还是挺多的。等需要的时候，好好钻研一下使用文档。
 
-#pandoc的一些小技巧
+# 13. pandoc的一些小技巧
 
 - 如何强制断行？      
   就是在一行结束的时候，按两次空格或者更多的空格，再换行写下一行的命令（不用空一行），这样就会强制换行。
