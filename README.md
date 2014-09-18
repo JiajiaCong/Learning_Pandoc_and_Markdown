@@ -171,7 +171,17 @@ tab to complete directories and file names.
 - pandoc markdown的使用说明，有中文版，可以google一下，网址是 (http://pages.tzengyuxio.me/pandoc/ )
 - 需要注意的是，pandoc中其实有很多地方可以控制的，比如在文档格式转化中，可以控制的地方还是挺多的。等需要的时候，好好钻研一下使用文档。
 
-# 13. pandoc的一些小技巧
+
+# 13. 使用Markdown来写邮件
+
+chrome和火狐浏览器中都可以安装Markdown Here的插件。以gmail为例，在邮件正文采用markdown的格式写作。公式采用latex的格式，但是想要在邮件中显示公式就要在markdown选项中同意浏览器向谷歌发送请求，索要生成的公式的图片。如果没有同意这个，那么$\alpha+\beta$就不会被编译为数学公式。
+
+写完邮件之后，可以鼠标右键，选择markdown转换。或者你可以采用markdown here的快捷键，我把快捷键设定为了ctrl+m. 这样采用markdown格式携程的邮件就会呈现漂亮的markdown形式啦！
+
+需要注意一点，按一次ctrl+m，会把原文编译为markdown形式；再按一次ctrl+m就会又回到原文形式。一切的修改都要在原文中进行修改，切勿在markdown的显示下进行修改，这样修改好，按ctrl+m，修改的部分就会丢失。切记！
+
+
+# 14. pandoc的一些小技巧
 
 - 如何强制断行？      
   就是在一行结束的时候，按两次空格或者更多的空格，再换行写下一行的命令（不用空一行），这样就会强制换行。
