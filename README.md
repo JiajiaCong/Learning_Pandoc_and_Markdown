@@ -186,3 +186,5 @@ chrome和火狐浏览器中都可以安装Markdown Here的插件。以gmail为�
 - 如何强制断行？      
   就是在一行结束的时候，按两次空格或者更多的空格，再换行写下一行的命令（不用空一行），这样就会强制换行。
 - 在vim中，多重的列表，每一级列表之间应该差一个tab的空格。
+- markdown中包含中文字符时，转换pdf时需要指定latex的编译方法。如下面的命令
+    pandoc infile.md -o outfile.pdf --latex-engine=xelatex --template=pm-template.latex
