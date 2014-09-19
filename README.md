@@ -180,11 +180,25 @@ chrome和火狐浏览器中都可以安装Markdown Here的插件。以gmail为�
 
 需要注意一点，按一次ctrl+m，会把原文编译为markdown形式；再按一次ctrl+m就会又回到原文形式。一切的修改都要在原文中进行修改，切勿在markdown的显示下进行修改，这样修改好，按ctrl+m，修改的部分就会丢失。切记！
 
+# 14. Markdown中含有中文时的编译
+使用上述的命令来编译含有中文的markdown会报错，原因是pandoc默认选择的pdf引擎是pdflatex，而pdflatex是不支持中文的，因此会发生上述错误。因此在使用pandoc的时候，可以手动指明Latex引擎为xelatex，这是完全支持中文显示的。这样我们的命令就变成了:
+
+    pandoc in.md -o out.pdf --latex-engine=xelatex
+    
+使用这个命令能够正常的编译出pdf文件，但是当你打开编译出来的pdf文件时，会发现其中的中文部分全是空白，这是字体的问题，因为Latex的默认字体是不支持中文的，因此我们可以继续修改命令：
+
+    pandoc in.md -o out.pdf --latex-engine=xelatex -V mainfont=SimSun
+其中mainfont参数是用来指明所使用的字体，SinSun表示的是宋体，你可以选择其他支持中文的字体。
+
+但是这个命令还是有问题的，打开生成的pdf，你会发现其中的中文完全是没有断行的，这是因为pandoc本身对中文支持不够，但这不是说我们没有解决方案，解决方案是使用网友编辑好的latex模板来生成pdf，这里用到的是tzengyuxio提供的pm-template.latex4。 下载模板后将其中的LiHei Pro字体替换成系统中安装有的中文字体即可，然后编译命令改为
+
+    pandoc in.md -o out.pdf --latex-engine=xelatex --template=pm-template.latex
+这时就能生成一个比较完美的pdf文件了。这个pm-template.latex的模板下载地址是（https://github.com/tzengyuxio/pages/tree/gh-pages/pandoc ），将代码复制粘贴进一个tex文档，保存成tex文档，比如template.tex之后，将template.tex和要编译的markdown放在同一个目录下面就可以了。
+
 
 # 14. pandoc的一些小技巧
 
 - 如何强制断行？      
   就是在一行结束的时候，按两次空格或者更多的空格，再换行写下一行的命令（不用空一行），这样就会强制换行。
 - 在vim中，多重的列表，每一级列表之间应该差一个tab的空格。
-- markdown中包含中文字符时，转换pdf时需要指定latex的编译方法。如下面的命令
-    pandoc infile.md -o outfile.pdf --latex-engine=xelatex --template=pm-template.latex
+
