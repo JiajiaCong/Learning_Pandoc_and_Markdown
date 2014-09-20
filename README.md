@@ -196,6 +196,16 @@ chrome和火狐浏览器中都可以安装Markdown Here的插件。以gmail为�
 这时就能生成一个比较完美的pdf文件了。这个pm-template.latex的模板下载地址是（https://github.com/tzengyuxio/pages/tree/gh-pages/pandoc ），将代码复制粘贴进一个tex文档，保存成tex文档，比如template.tex之后，将template.tex和要编译的markdown放在同一个目录下面就可以了。
 
 
+# vim中直接运行pandoc
+比如我们要把test.md在vim中直接转成pdf，并且直接通过vim命令来打开。可以通过下面的命令来实现。
+
+    :!pandoc test.md -s -o test.pdf  --latex-engine=xelatex --template=template.tex
+    :!.\test.pdf
+ 这个！的意思是要在vim中运行cmd的命令，所以必须要加，不能省去。
+ 
+ 同样的方法可以将md转为其他的格式，语法和一般的pandoc语法是一样的，只是要在vim中加上:!这样一个表示vim命令状态（:），一个表示运行cmd的命令（！）。
+
+
 # 14. pandoc的一些小技巧
 
 - 如何强制断行？      
